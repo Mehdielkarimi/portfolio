@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-export default function Hero() {
-  return (
-    <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "0 1.5rem", textAlign: "center", position: "relative" }}>
-      <div style={{ pointerEvents: "none", position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(168,255,120,0.04) 0%, transparent 70%)" }} />
-      <div style={{ maxWidth: "760px", width: "100%" }}>
-        <div className="hero-item" style={{ marginBottom: "2.5rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", animationDelay: "0ms" }}>
-          <span style={{ position: "relative", display: "flex", height: "0.5rem", width: "0.5rem" }}>
-            <span className="animate-ping" style={{ position: "absolute", display: "inline-flex", height: "100%", width: "100%", borderRadius: "9999px", backgroundColor: "#a8ff78", opacity: 0.6 }} />
-            <span style={{ position: "relative", display: "inline-flex", height: "0.5rem", width: "0.5rem", borderRadius: "9999px", backgroundColor: "#a8ff78" }} />
-          </span>
-          <span style={{ fontFamily: "monospace", fontSize: "0.75rem", letterSpacing: "0.15em", color: "#a8ff78" }}>AVAILABLE FOR OPPORTUNITIES</span>
-        </div>
-
-        <h1 className="hero-item" style={{ fontSize: "clamp(3rem, 8vw, 5.5rem)", fontWeight: 300, lineHeight: 1.05, letterSpacing: "-0.02em", color: "#f0f0f0", marginBottom: "1.25rem", animationDelay: "120ms" }}>
-          Mehdi<br />
-          <span style={{ color: "#888888" }}>ElKarimi</span>
-        </h1>
-
-        <p className="hero-item" style={{ fontSize: "clamp(0.95rem, 2.5vw, 1.15rem)", fontWeight: 300, letterSpacing: "0.05em", color: "#666666", marginBottom: "2rem", animationDelay: "240ms" }}>
-          Computer Science Student & Software Engineer
-        </p>
-
-        <div className="hero-item" style={{ margin: "0 auto 2rem", height: "1px", width: "4rem", backgroundColor: "#1f1f1f", animationDelay: "360ms" }} />
-
-        <p className="hero-item" style={{ maxWidth: "500px", margin: "0 auto", fontSize: "clamp(0.95rem, 2vw, 1.05rem)", fontWeight: 300, lineHeight: 1.8, color: "#555555", animationDelay: "480ms" }}>
-          I build clean, thoughtful software at the intersection of engineering and design. Passionate about systems, interfaces, and the craft of writing code that lasts.
-        </p>
-
-        <div className="hero-item" style={{ marginTop: "5rem", animationDelay: "600ms" }}>
-          <div className="scroll-hint" style={{ margin: "0 auto", display: "flex", height: "2.25rem", width: "1.25rem", alignItems: "flex-start", justifyContent: "center", borderRadius: "9999px", border: "1px solid #222222", paddingTop: "0.375rem" }}>
-            <div style={{ height: "0.375rem", width: "0.25rem", borderRadius: "9999px", backgroundColor: "#333333" }} />
-          </div>
-        </div>
-      </div>
-=======
 "use client";
 
 import { motion } from "framer-motion";
@@ -108,7 +72,6 @@ export default function Hero() {
           applications that turn data into decisions.
         </motion.p>
       </motion.div>
->>>>>>> e53c19f9 (Remove node_modules from repo)
     </section>
   );
 }
