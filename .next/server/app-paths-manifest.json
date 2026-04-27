@@ -1,0 +1,7 @@
+{
+<<<<<<< HEAD
+  "/_not-found/page": "app/_not-found/page.js",
+=======
+>>>>>>> e53c19f9 (Remove node_modules from repo)
+  "/page": "app/page.js"
+}
