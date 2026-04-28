@@ -13,7 +13,7 @@ const projects = [
   {
     title: "Offline Tracking for OOH Research",
     description:
-      "Worked on research and system design for offline tracking in out-of-home advertising, focusing on how physical exposure could be linked to measurable outcomes.Explored approaches using location data, behavioral signals, and attribution models to bridge the gap between offline impressions and user actions.",
+      "Contributed on research and system design for offline tracking in out-of-home advertising, focusing on how physical exposure could be linked to measurable outcomes.Explored approaches using location data, behavioral signals, and attribution models to bridge the gap between offline impressions and user actions.",
     stack: ["Research", "Analytics", "AdTech"],
     year: "2025",
   },
