@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Unreal Engine Game Project",
     description:
-      "Built a game prototype in Unreal Engine to explore environment design, gameplay systems, and real-time interaction. The project strengthened my understanding of performance, logic flow, and how technical choices shape user experience.",
+      "Built a game prototype in Unreal Engine to explore environment design, gameplay systems, and real-time interaction. The project was my introduction to the world of game development and how complex yet intuitive it is.",
     stack: ["Unreal Engine", "C++", "Gameplay Systems"],
     year: "2024",
   },
@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Personal Portfolio Website",
     description:
-      "Designed and built this portfolio as a concise, recruiter-focused site that presents my background, projects, and experience with clarity. The emphasis is on readable structure, minimal design, and polished front-end execution.",
+      "Designed and built this portfolio as a concise, recruiter-focused site that presents me, my background, my projects, and experience with clarity. The emphasis is on readable structure, minimal design, polished and smooth front-end execution.",
     stack: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
     year: "2026",
   },
