@@ -56,3 +56,169 @@ body::before {
   --color-line: var(--line);
   --color-accent: var(--accent);
 }
+
+/* CRT scanlines + flicker overlay on the screen content */
+.crt-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  /* Scanlines */
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.18),
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: multiply;
+  animation: flicker 0.14s infinite;
+}
+
+/* Vignette layer + subtle green phosphor tint */
+.crt-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.55) 100%),
+    radial-gradient(ellipse at center, rgba(120, 255, 140, 0.03) 0%, transparent 70%);
+  mix-blend-mode: normal;
+}
+
+/* CRT screen curvature illusion via box-shadow inset */
+.crt-screen-wrap {
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 15, 15, 0.9) 0%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.24),
+    inset 0 0 44px rgba(0, 0, 0, 0.52),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.crt-screen-content section {
+  padding-block: 4.5rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.crt-screen-content section:first-child {
+  padding-top: 3rem;
+}
+
+.crt-screen-content section:last-child {
+  padding-bottom: 3rem;
+}
+
+.crt-screen-content section > div {
+  gap: 2rem;
+}
+
+.crt-screen-content h2 {
+  max-width: 13ch;
+  font-size: clamp(2.3rem, 4vw, 4.25rem);
+}
+
+.screen-container {
+  width: 900px;
+  height: 650px;
+  background: rgba(0, 0, 0, 0.92);
+  color: white;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 18px;
+  padding: 0;
+}
+
+.debug-screen {
+  outline: 6px solid lime;
+  background: rgba(0, 20, 0, 0.92);
+}
+
+.crt-css-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+.crt-css-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.45));
+}
+
+.crt-screen-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 6px solid rgba(10, 10, 10, 0.28);
+  box-shadow:
+    inset 0 0 18px rgba(255, 255, 255, 0.02),
+    inset 0 0 30px rgba(0, 0, 0, 0.42);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.crt-screen-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    transparent 12%,
+    transparent 82%,
+    rgba(0, 0, 0, 0.1)
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Backlight glow that bleeds out from the monitor bezel */
+.monitor-backlight {
+  position: absolute;
+  inset: -8% -6%;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(100, 255, 130, 0.18) 0%,
+    rgba(100, 255, 130, 0.06) 35%,
+    transparent 65%
+  );
+  filter: blur(24px);
+  pointer-events: none;
+  z-index: 0;
+  animation: backlightPulse 3s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  0%   { opacity: 0.96; }
+  30%  { opacity: 1; }
+  60%  { opacity: 0.98; }
+  100% { opacity: 0.95; }
+}
+
+@keyframes backlightPulse {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 1; }
+}
